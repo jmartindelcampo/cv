@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Martín del Campo Valdés</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            min-height: 297mm;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            min-height: 297mm;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            background: #3498db;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .sidebar-section h5 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            background: #34495e;
+            height: 4px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #3498db;
+            border-radius: 2px;
+        }
+
+        .main-section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            font-weight: 600;
+        }
+
+        .experience-timeline {
+            border-left: 3px solid #3498db;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -23px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+
+        .tech-card {
+            background: #f8f9fa;
+            border-left: 3px solid #3498db;
+            transition: transform 0.2s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-item {
+            color: #ecf0f1;
+            font-size: 10pt;
+        }
+
+        .contact-icon {
+            color: #3498db;
+            width: 20px;
+        }
+
+        .cert-card {
+            background: #f8f9fa;
+            border-left: 3px solid #3498db !important;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef !important;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: #3498db !important;
+        }
+
+        .cert-title {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .cert-institution {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .cert-date {
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        .cert-description {
+            color: #495057;
+            line-height: 1.4;
+        }
+
+        .cert-actions .btn {
+            font-size: 11px;
+            padding: 4px 8px;
+        }
+
+        .cert-actions .btn i {
+            font-size: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .cert-card .d-flex {
+                flex-direction: column;
+            }
+
+            .cert-actions {
+                margin-top: 15px;
+                align-self: flex-start;
+            }
+        }
+
+        @media print {
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: none;
+            }
+
+            body {
+                margin: 0;
+            }
+        }
+
+        .job-title {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .company-name {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .duration {
+            color: #6c757d;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+        <div class="row g-0">
+            <!-- Sidebar -->
+            <div class="col-md-4 sidebar p-4">
+                <!-- Profile Section -->
+                <div class="text-center mb-4">
+                    <div
+                        class="profile-photo rounded-circle mx-auto d-flex align-items-center justify-content-center text-white mb-3">
+                        MV
+                    </div>
+                    <h4 class="fw-bold mb-1">Martín del Campo Valdés <br>Jesús Francisco</h4>
+                    <p class="text-light fs-6 mb-0">Full-Stack Developer</p>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="sidebar-section mb-4">
+                    <h5 class="mb-3 pb-2">CONTACTO</h5>
+                    <div class="contact-item mb-2">
+                        <i class="bi bi-phone contact-icon me-2"></i>
+                        <span class="small">33 12 76 12 49</span>
+                    </div>
+                    <div class="contact-item mb-2">
+                        <i class="bi bi-envelope contact-icon me-2"></i>
+                        <span class="small">mcvjf.maz@gmail.com</span>
+                    </div>
+                    <div class="contact-item mb-2">
+                        <i class="bi bi-geo-alt contact-icon me-2"></i>
+                        <span class="small">Mazatlán, Sinaloa</span>
+                    </div>
+                    <div class="contact-item mb-2">
+                        <i class="bi bi-calendar contact-icon me-2"></i>
+                        <span class="small">24 de enero, 1989</span>
+                    </div>
+                    <div class="contact-item mb-2">
+                        <i class="bi bi-house contact-icon me-2"></i>
+                        <span class="small">Casado</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-flag contact-icon me-2"></i>
+                        <span class="small">Mexicano</span>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="sidebar-section mb-4">
+                    <h5 class="mb-3 pb-2">HABILIDADES CLAVE</h5>
+                    <div class="mb-3">
+                        <div class="small fw-semibold mb-1">PHP & Laravel</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="small fw-semibold mb-1">JavaScript</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="small fw-semibold mb-1">MySQL</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="small fw-semibold mb-1">Bootstrap/CSS</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="small fw-semibold mb-1">Git/GitHub</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="small fw-semibold mb-1">Docker</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages Section -->
+                <div class="sidebar-section mb-4">
+                    <h5 class="mb-3 pb-2">IDIOMAS</h5>
+                    <div class="mb-3">
+                        <div class="fw-semibold small">Español</div>
+                        <div class="text-light small">Nativo</div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="fw-semibold small">Inglés</div>
+                        <div class="text-light small">Intermedio-Avanzado (70%)</div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="sidebar-section">
+                    <h5 class="mb-3 pb-2">EDUCACIÓN</h5>
+                    <div class="small">
+                        <div class="fw-semibold text-info">TSU en Tecnologías de la información y Comunicación</div>
+                        <div class="text-light">Área Sistemas Informáticos</div>
+                        <div class="text-light">Cédula Profesional: 9028980</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-8 p-4">
+                <!-- Professional Profile -->
+                <div class="main-section mb-4">
+                    <h2 class="mb-3 pb-2">PERFIL PROFESIONAL</h2>
+                    <p class="text-justify">
+                        Desarrollador Full-Stack con más de <strong>10 años de experiencia</strong> especializado en PHP
+                        y tecnologías web modernas. Experto en <strong>Laravel</strong> con sólidos conocimientos en
+                        desarrollo frontend y backend. Comprometido con las <strong>buenas prácticas de
+                            programación</strong>, control de versiones y desarrollo de software de calidad. Experiencia
+                        comprobada en trabajo colaborativo y adaptación a nuevas tecnologías.
+                    </p>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="main-section mb-4">
+                    <h2 class="mb-3 pb-2">EXPERIENCIA PROFESIONAL</h2>
+
+                    <div class="experience-timeline ps-3">
+                        <!-- Current Job -->
+                        <div class="timeline-item position-relative mb-4">
+                            <h5 class="job-title mb-1">Programador PHP Full-Stack</h5>
+                            <h6 class="company-name mb-1">Desarrollo Nubit</h6>
+                            <p class="duration small mb-2">Octubre 2019 - Actualidad (6+ años)</p>
+                            <ul class="small text-muted mb-0">
+                                <li>Desarrollo de aplicaciones web a la medida utilizando <strong>PHP y Laravel</strong>
+                                </li>
+                                <li>Implementación de soluciones Full-Stack con <strong>FastAPI y Docker</strong></li>
+                                <li>Colaboración en proyectos utilizando <strong>Git/GitHub</strong> para control de
+                                    versiones</li>
+                                <li>Aplicación de <strong>buenas prácticas de programación</strong> y patrones de diseño
+                                </li>
+                                <li>Trabajo en entornos <strong>Ubuntu 20.04</strong> y contenedorización con Docker
+                                </li>
+                                <li>Gestión de tareas y proyectos mediante <strong>Jira</strong></li>
+                            </ul>
+                        </div>
+
+                        <!-- Previous Job -->
+                        <div class="timeline-item position-relative mb-4">
+                            <h5 class="job-title mb-1">Programador PHP Frontend/Backend</h5>
+                            <h6 class="company-name mb-1">STX</h6>
+                            <p class="duration small mb-2">Octubre 2014 - Octubre 2019 (5 años)</p>
+                            <ul class="small text-muted mb-0">
+                                <li>Desarrollo de aplicaciones web personalizadas con <strong>PHP</strong></li>
+                                <li>Implementación de interfaces responsivas con <strong>Bootstrap y jQuery</strong>
+                                </li>
+                                <li>Desarrollo de <strong>APIs REST</strong> y servicios web</li>
+                                <li>Trabajo en equipo utilizando metodologías ágiles</li>
+                            </ul>
+                        </div>
+
+                        <!-- First Job -->
+                        <div class="timeline-item position-relative mb-4">
+                            <h5 class="job-title mb-1">Programador ASP</h5>
+                            <h6 class="company-name mb-1">Tracsa SAPI</h6>
+                            <p class="duration small mb-2">Junio 2013 - Febrero 2014 (8 meses)</p>
+                            <ul class="small text-muted mb-0">
+                                <li>Mantenimiento y actualización de herramientas de <strong>intranet
+                                        corporativa</strong></li>
+                                <li>Desarrollo y optimización de aplicaciones web internas</li>
+                                <li>Soporte técnico a usuarios finales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies -->
+                <div class="main-section mb-4">
+                    <h2 class="mb-3 pb-2">TECNOLOGÍAS Y HERRAMIENTAS</h2>
+
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">PHP</div>
+                                <div class="text-muted" style="font-size: 9pt;">10+ años • Avanzado</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">Laravel</div>
+                                <div class="text-muted" style="font-size: 9pt;">5+ años • Avanzado</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">JavaScript</div>
+                                <div class="text-muted" style="font-size: 9pt;">8+ años • Avanzado</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">MySQL</div>
+                                <div class="text-muted" style="font-size: 9pt;">10+ años • Avanzado</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">FastAPI</div>
+                                <div class="text-muted" style="font-size: 9pt;">1+ año • Intermedio</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">Docker</div>
+                                <div class="text-muted" style="font-size: 9pt;">1+ año • Intermedio</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">Bootstrap</div>
+                                <div class="text-muted" style="font-size: 9pt;">8+ años • Avanzado</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">Angular</div>
+                                <div class="text-muted" style="font-size: 9pt;">2+ años • Intermedio</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">Ubuntu 20.04</div>
+                                <div class="text-muted" style="font-size: 9pt;">Intermedio</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="tech-card p-2 rounded">
+                                <div class="fw-semibold small text-dark">Git/GitHub</div>
+                                <div class="text-muted" style="font-size: 9pt;">Avanzado</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificados y Diplomados Section -->
+                <div class="main-section mb-4">
+                    <h2 class="mb-3 pb-2">CERTIFICADOS Y DIPLOMADOS</h2>
+
+                    <div class="row g-3">
+                        <!-- Certificado 1 -->
+                        <div class="col-12">
+                            <div class="cert-card p-3 rounded border" role="button" onclick="viewCertificate('Curso_de_Productividad_Personal_en_la_Era_Digital.pdf', 'Curso de Productividad Personal en la Era Digital')">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="flex-grow-1">
+                                        <h6 class="cert-title mb-1">Curso de Productividad Personal en la Era Digital</h6>
+                                        <p class="cert-institution mb-1 small text-primary">Google Activate</p>
+                                        <p class="cert-date small text-muted mb-2">Diciembre 2015</p>
+                                        <p class="cert-description small text-muted mb-0">Gestionar el tiempo, tareas y proyectos usando herramientas digitales.</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificado 2 -->
+                        <div class="col-12" onclick="viewCertificate('Diplomado_en_habilidades_Gerenciales.pdf', 'Diplomado en habilidades gerenciales')">
+                            <div class="cert-card p-3 rounded border"  role="button">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="flex-grow-1">
+                                        <h6 class="cert-title mb-1">Diplomado en habilidades gerenciales</h6>
+                                        <p class="cert-institution mb-1 small text-primary">Coparmex Jalisco</p>
+                                        <p class="cert-date small text-muted mb-2">Agosto 2023</p>
+                                        <p class="cert-description small text-muted mb-0">Desarrollar y fortalecer habilidades interpersonales (como comunicación, negociación, liderazgo), de gestión del tiempo, de toma de decisiones y gestión de equipos para mejorar la productividad, coordinación y resultados dentro del entorno laboral.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificado 1 -->
+                        <div class="col-12" onclick="viewCertificate('Google_Inteligencia_artificial_y_productividad.pdf', 'Google Inteligencia artificial y productividad')">
+                            <div class="cert-card p-3 rounded border"  role="button">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="flex-grow-1">
+                                        <h6 class="cert-title mb-1">Google Inteligencia artificial y productividad</h6>
+                                        <p class="cert-institution mb-1 small text-primary">Google | Santander Academy</p>
+                                        <p class="cert-date small text-muted mb-2">Julio 2024</p>
+                                        <p class="cert-description small text-muted mb-0">Brindar a los participantes los conocimientos básicos sobre inteligencia artificial y el uso de herramientas digitales, para que puedan aplicarlas de manera práctica en la automatización de tareas, la generación de ideas y la mejora de su productividad personal y profesional en la era digital.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificado 3 -->
+                        <div class="col-12">
+                            <div class="cert-card p-3 rounded border"  role="button" onclick="viewCertificate('Flutter_Tu_guía_completa_de_desarrollo_para_IOS_y_Android.pdf', 'Flutter Tu guía completa de desarrollo para IOS y Android')">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="flex-grow-1">
+                                        <h6 class="cert-title mb-1">Flutter Tu guía completa de desarrollo para IOS y Android</h6>
+                                        <p class="cert-institution mb-1 small text-primary">Udemy | Fernando Herrera
+                                        </p>
+                                        <p class="cert-date small text-muted mb-2">Julio 2021</p>
+                                        <p class="cert-description small text-muted mb-0">Desarrollo de aplicaciones móviles nativas para iOS y Android utilizando Flutter y Dart, para crear aplicaciones funcionales y visualmente atractivas, y desplegarlas en las tiendas móviles correspondientes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Competencies -->
+                <div class="main-section">
+                    <h2 class="mb-3 pb-2">COMPETENCIAS PROFESIONALES</h2>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <div class="fw-semibold small">Buenas prácticas de programación</div>
+                                    <div class="text-muted" style="font-size: 9pt;">Código limpio y documentado</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <div class="fw-semibold small">Trabajo colaborativo</div>
+                                    <div class="text-muted" style="font-size: 9pt;">Git, metodologías ágiles</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <div class="fw-semibold small">Adaptabilidad tecnológica</div>
+                                    <div class="text-muted" style="font-size: 9pt;">Rápido aprendizaje</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                                <div>
+                                    <div class="fw-semibold small">Investigación autónoma</div>
+                                    <div class="text-muted" style="font-size: 9pt;">Resolución independiente</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portafolio -->
+                <div class="main-section mb-4">
+                    <h2 class="mb-3 pb-2">CERTIFICADOS Y DIPLOMADOS</h2>
+                    <div class="row g-3">
+                        <div class="col-6">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para visualizar PDFs -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfModalLabel">
+                        <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>
+                        <span id="modalCertTitle">Certificación</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div id="pdfLoader" class="text-center py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                        <p class="mt-3 text-muted">Cargando certificado...</p>
+                    </div>
+                    <iframe id="pdfViewer" src="" width="100%" height="600" style="border: none; display: none;"
+                        title="Visor de PDF">
+                    </iframe>
+                    <div id="pdfError" class="text-center py-5" style="display: none;">
+                        <i class="bi bi-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                        <h5 class="mt-3">No se pudo cargar el certificado</h5>
+                        <p class="text-muted">El archivo PDF no está disponible o no se pudo cargar.</p>
+                        <button class="btn btn-primary" onclick="retryLoadPdf()">
+                            <i class="bi bi-arrow-clockwise me-1"></i>Intentar de nuevo
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg me-1"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentPdfUrl = '';
+        let currentCertName = '';
+
+        function viewCertificate(filename, certTitle = 'Certificación') {
+            // Construir la URL del PDF (ajusta según tu estructura de carpetas)
+            currentPdfUrl = `src/pdf_certs/${filename}`;
+            currentCertName = certTitle;
+
+            // Actualizar el título del modal
+            document.getElementById('modalCertTitle').textContent = certTitle;
+
+            // Mostrar el modal
+            const modal = new bootstrap.Modal(document.getElementById('pdfModal'));
+            modal.show();
+
+            // Cargar el PDF
+            loadPdfInModal(currentPdfUrl);
+        }
+
+        function loadPdfInModal(pdfUrl) {
+            const loader = document.getElementById('pdfLoader');
+            const viewer = document.getElementById('pdfViewer');
+            const error = document.getElementById('pdfError');
+
+            // Mostrar loader y ocultar otros elementos
+            loader.style.display = 'block';
+            viewer.style.display = 'none';
+            error.style.display = 'none';
+
+            // Intentar cargar el PDF
+            const iframe = document.getElementById('pdfViewer');
+
+            // Agregar parámetros para forzar la visualización inline
+            const pdfUrlWithParams = `${pdfUrl}#toolbar=1&navpanes=0&scrollbar=1&page=1&view=FitH`;
+            console.log(pdfUrlWithParams);
+            iframe.onload = function () {
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    viewer.style.display = 'block';
+                }, 500);
+            };
+
+            iframe.onerror = function () {
+                loader.style.display = 'none';
+                error.style.display = 'block';
+            };
+
+            iframe.src = pdfUrlWithParams;
+        }
+
+        function retryLoadPdf() {
+            loadPdfInModal(currentPdfUrl);
+        }
+
+        function downloadFromModal() {
+            downloadCertificate(currentPdfUrl.split('/').pop(), currentCertName);
+        }
+
+        function openInNewTab() {
+            window.open(currentPdfUrl, '_blank');
+        }
+
+        function downloadCertificate(filename, certTitle = '') {
+            // Crear elemento de descarga
+            const link = document.createElement('a');
+            link.href = `src/pdf_certs/${filename}`;
+            link.download = certTitle ? `${certTitle}.pdf` : filename;
+
+            // Agregar al DOM temporalmente y hacer click
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Limpiar el iframe cuando se cierre el modal
+        document.getElementById('pdfModal').addEventListener('hidden.bs.modal', function () {
+            document.getElementById('pdfViewer').src = '';
+            currentPdfUrl = '';
+            currentCertName = '';
+        });
+    </script>
+</body>
+
+</html>

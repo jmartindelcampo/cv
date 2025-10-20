@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Martín del Campo Valdés</title>
+    <!-- MDB CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 20px auto;
+            min-height: 297mm;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .sidebar {
+            background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+            color: white;
+            min-height: 297mm;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            pointer-events: none;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #42a5f5 0%, #2196f3 100%);
+            font-size: 48px;
+            font-weight: 500;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .sidebar-section h5 {
+            color: #e3f2fd;
+            border-bottom: 2px solid #42a5f5;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+        }
+
+        .contact-item {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            padding-left: 12px;
+        }
+
+        .contact-icon {
+            color: #42a5f5;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        /* Progress bars con Material Design */
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .progress-material {
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-material {
+            height: 100%;
+            background: #276baf;
+            border-radius: 3px;
+            position: relative;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .progress-bar-material::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .main-section h2 {
+            color: #1976d2;
+            font-weight: 400;
+            font-size: 24px;
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .main-section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+            border-radius: 2px;
+        }
+
+        /* Cards con Material Design */
+        .experience-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid #1976d2;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(25, 118, 210, 0.15);
+        }
+
+        .job-title {
+            color: #1976d2;
+            font-weight: 500;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .company-name {
+            color: #42a5f5;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 12px;
+            background: #e3f2fd;
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        /* Tech Cards con Chips Material */
+        .tech-chip {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 24px;
+            padding: 1px 16px;
+            margin: 4px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: default;
+        }
+
+        .tech-chip:hover {
+            background: #1976d2;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+        }
+
+        .tech-chip .chip-icon {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* Certificados con Material Cards */
+        .cert-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border-color: #1976d2;
+        }
+
+        .cert-title {
+            color: #1976d2;
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .cert-institution {
+            color: #42a5f5;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .cert-date {
+            color: #666;
+            font-size: 12px;
+            background: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Competencias con badges Material */
+        .competency-item {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .competency-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .competency-icon {
+            color: #4caf50;
+            font-size: 24px;
+            margin-right: 16px;
+        }
+
+        /* Floating Action Button Style */
+        .fab-download {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(25, 118, 210, 0.4);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+        }
+
+        .fab-download:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 18px rgba(25, 118, 210, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cv-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+
+            .sidebar {
+                min-height: auto;
+            }
+        }
+
+        @media print {
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: none;
+                border-radius: 0;
+            }
+
+            .fab-download {
+                display: none;
+            }
+
+            body {
+                margin: 0;
+                background: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+        <div class="row g-0">
+            <!-- Sidebar -->
+            <div class="col-md-4 sidebar p-4">
+                <!-- Profile Section -->
+                <div class="text-center mb-4 fade-in-up">
+                    <img class="profile-photo rounded-circle mx-auto d-flex align-items-center justify-content-center text-white mb-3"
+                        src="https://media.licdn.com/dms/image/v2/C4E03AQGEbggZkgUONg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517537517956?e=1761782400&v=beta&t=J0eXfCZ1NQ2T4I7ipaF9LhO-UTyUbIIVD02IRMD4fdw"
+                        alt="">
+                    <h4 class="fw-normal mb-1">Martín del Campo Valdés <br>Jesús Francisco</h4>
+                    <p class="text-light fs-6 mb-0">Full-Stack Developer</p>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="sidebar-section mb-4 fade-in-up">
+                    <h5 class="mb-3 pb-2">Contacto</h5>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <span class="small">33 12 76 12 49</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span class="small">mcvjf.maz@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span class="small">Mazatlán, Sinaloa</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <span class="small">24 de enero, 1989</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span class="small">Casado</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <span class="small">Mexicano</span>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="sidebar-section mb-4 fade-in-up">
+                    <h5 class="mb-3 pb-2">Habilidades Clave</h5>
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span class="small fw-medium">PHP & Laravel</span>
+                            <span class="small">95%</span>
+                        </div>
+                        <div class="progress-material">
+                            <div class="progress-bar-material" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span class="small fw-medium">JavaScript</span>
+                            <span class="small">90%</span>
+                        </div>
+                        <div class="progress-material">
+                            <div class="progress-bar-material" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span class="small fw-medium">MySQL</span>
+                            <span class="small">85%</span>
+                        </div>
+                        <div class="progress-material">
+                            <div class="progress-bar-material" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span class="small fw-medium">MDBootstrap/Bootstrap/CSS</span>
+                            <span class="small">90%</span>
+                        </div>
+                        <div class="progress-material">
+                            <div class="progress-bar-material" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span class="small fw-medium">Git/GitHub</span>
+                            <span class="small">85%</span>
+                        </div>
+                        <div class="progress-material">
+                            <div class="progress-bar-material" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">
+                            <span class="small fw-medium">Docker</span>
+                            <span class="small">70%</span>
+                        </div>
+                        <div class="progress-material">
+                            <div class="progress-bar-material" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages Section -->
+                <div class="sidebar-section mb-4 fade-in-up">
+                    <h5 class="mb-3 pb-2">Idiomas</h5>
+                    <div class="mb-3">
+                        <div class="fw-medium small d-flex align-items-center">
+                            <i class="fas fa-circle text-success me-2" style="font-size: 8px;"></i>
+                            Español
+                        </div>
+                        <div class="text-light small ms-3">Nativo</div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="fw-medium small d-flex align-items-center">
+                            <i class="fas fa-circle text-warning me-2" style="font-size: 8px;"></i>
+                            Inglés
+                        </div>
+                        <div class="text-light small ms-3">Intermedio (50%)</div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="sidebar-section fade-in-up">
+                    <h5 class="mb-3 pb-2">Educación</h5>
+                    <div class="small">
+                        <div class="fw-medium text-info mb-2">TSU en Tecnologías de la información y Comunicación</div>
+                        <div class="text-light mb-1">Área Sistemas Informáticos</div>
+                        <div class="text-light">
+                            <i class="fas fa-certificate me-1"></i>
+                            Cédula Profesional: 9028980
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-8 p-4">
+                <!-- Professional Profile -->
+                <div class="main-section mb-4 fade-in-up">
+                    <h2 class="mb-3 pb-2">Perfil Profesional</h2>
+                    <p class="text-justify">
+                        Desarrollador Full-Stack con más de <strong>10 años de experiencia</strong> especializado en PHP
+                        y tecnologías web modernas. Experto en <strong>Laravel</strong> con sólidos conocimientos en
+                        desarrollo frontend y backend. Comprometido con las <strong>buenas prácticas de
+                            programación</strong>, control de versiones y desarrollo de software de calidad. Experiencia
+                        comprobada en trabajo colaborativo y adaptación a nuevas tecnologías.
+                    </p>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="main-section mb-4 fade-in-up">
+                    <h2 class="mb-3 pb-2">Experiencia Profesional</h2>
+
+                    <!-- Current Job -->
+                    <div class="experience-card">
+                        <h5 class="job-title mb-1">Programador PHP Full-Stack</h5>
+                        <div class="d-flex flex-row align-items-center justify-content-between">
+                            <span class="h6 company-name mb-1">Desarrollo Nubit</span><span
+                                class="duration mb-1">Octubre 2019 - Actualidad (6+ años)</span>
+                        </div>
+                        <ul class="small text-muted mb-0 mt-1">
+                            <li>Desarrollo de aplicaciones web a la medida utilizando <strong>PHP y Laravel</strong>
+                            </li>
+                            <li>Implementación de soluciones Full-Stack con <strong>FastAPI y Docker</strong></li>
+                            <li>Desarrollo de interfaces y componentes utilizando <strong>MDB</strong> (Material Design
+                                for Bootstrap)</li>
+
+                            <li>Colaboración en proyectos utilizando <strong>Git/GitHub</strong> para control de
+                                versiones</li>
+                            <li>Aplicación de <strong>buenas prácticas de programación</strong> y patrones de diseño
+                            </li>
+                            <li>Trabajo en entornos <strong>Ubuntu 20.04</strong> y contenedorización con Docker</li>
+                            <li>Gestión de tareas y proyectos mediante <strong>Jira</strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- Previous Job -->
+                    <div class="experience-card">
+                        <h5 class="job-title mb-1">Programador PHP Frontend/Backend</h5>
+                        <div class="d-flex flex-row align-items-center justify-content-between">
+                            <span class="h6 company-name mb-1">STX</span><span class="duration mb-1">Octubre 2014 -
+                                Octubre 2019 (5 años)</span>
+                        </div>
+                        <ul class="small text-muted mb-0 mt-3">
+                            <li>Desarrollo de aplicaciones web personalizadas con <strong>PHP</strong></li>
+                            <li>Implementación de interfaces responsivas con <strong>Bootstrap y jQuery</strong></li>
+                            <li>Desarrollo de <strong>APIs REST</strong> y servicios web</li>
+                            <li>Trabajo en equipo utilizando metodologías ágiles</li>
+                        </ul>
+                    </div>
+
+                    <!-- First Job -->
+                    <div class="experience-card">
+                        <h5 class="job-title mb-1">Programador ASP</h5>
+                        <div class="d-flex flex-row align-items-center justify-content-between">
+                            <span class="h6 company-name mb-1">Tracsa SAPI</span><span class="duration mb-1">Junio 2013
+                                - Febrero 2014 (8 meses)</span>
+                        </div>
+                        <ul class="small text-muted mb-0 mt-3">
+                            <li>Mantenimiento y actualización de herramientas de <strong>intranet corporativa</strong>
+                            </li>
+                            <li>Desarrollo y optimización de aplicaciones web internas</li>
+                            <li>Soporte técnico a usuarios finales</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <!-- Technologies -->
+                <div class="main-section mb-4 fade-in-up">
+                    <h2 class="mb-3 pb-2">Tecnologías y Herramientas</h2>
+                    <div class="d-flex flex-wrap">
+                        <div class="tech-chip">
+                            <i class="fab fa-php chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">PHP </div>
+                                <small>10+ años</small>
+                            </div>
+                        </div>
+                        <div class="tech-chip">
+                            <i class="fab fa-laravel chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">Laravel</div>
+                                <small>5+ años</small>
+                            </div>
+                        </div>
+                        <div class="tech-chip">
+                            <i class="fab fa-docker chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">Docker</div>
+                                <small>1+ año</small>
+                            </div>
+                        </div>
+                        <div class="tech-chip">
+                            <i class="fas fa-database chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">MySQL</div>
+                                <small>10+ años</small>
+                            </div>
+                        </div>
+                        <div class="tech-chip">
+                            <i class="fab fa-ubuntu chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">Ubuntu 20.04</div>
+                                <small>Intermedio</small>
+                            </div>
+                        </div>
+                        <div class="tech-chip">
+                            <i class="fab fa-angular chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">Angular</div>
+                                <small>2+ años</small>
+                            </div>
+                        </div>
+
+                        <div class="tech-chip">
+                            <i class="fas fa-rocket chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">FastAPI</div>
+                                <small>1+ año</small>
+                            </div>
+                        </div>
+
+                        <div class="tech-chip">
+                            <i class="fab fa-js chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">JavaScript</div>
+                                <small>8+ años</small>
+                            </div>
+                        </div>
+
+                        <div class="tech-chip">
+                            <i class="fab fa-bootstrap chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">Bootstrap</div>
+                                <small>8+ años</small>
+                            </div>
+                        </div>
+
+                        <div class="tech-chip">
+                            <i class="fab fa-git-alt chip-icon"></i>
+                            <div>
+                                <div class="fw-medium">Git/GitHub</div>
+                                <small>Intermedio</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="main-section mb-4 fade-in-up">
+                    <h2 class="mb-3 pb-2">Protafolio</h2>
+                    <div class="row">
+
+
+                        <!-- Protafolio -->
+                        <div class="card card-cascade wider mt-2 mb-3 hoverable">
+
+                            <!-- Card image -->
+                            <div class="view view-cascade overlay">
+                                <img class="card-img-top" src="src/img/portfolio/1.jpeg" alt="Card image cap">
+                                <a href="src/portafolio/flipcard.html">
+                                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                                </a>
+                            </div>
+
+                            <!-- Card content -->
+                            <div class="card-body card-body-cascade text-center">
+
+                                <!-- Title -->
+                                <h4 class="card-title"><strong>Tarjeta de presentación</strong></h4>
+                                <!-- Text -->
+                                <p class="card-text">
+                                    Página web personal con diseño de una tarjeta de presentación profesional (Flipcard), al posicionar el mouse se muestra información al reverso.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Certificados -->
+                <div class="main-section mb-4 fade-in-up">
+                    <h2 class="mb-3 pb-2">Certificados y Diplomados</h2>
+
+                    <div class="cert-card" data-filename="Diplomado_en_habilidades_Gerenciales.pdf"
+                        data-title="Diplomado en habilidades gerenciales">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <h6 class="cert-title mb-1">Diplomado en habilidades gerenciales</h6>
+                                <p class="cert-institution mb-1">Coparmex Jalisco</p>
+                                <span class="cert-date mb-2">Agosto 2023</span>
+                                <p class="cert-description small text-muted mb-0 mt-2">Desarrollar y fortalecer
+                                    habilidades interpersonales (como comunicación, negociación, liderazgo), de gestión
+                                    del tiempo, de toma de decisiones y gestión de equipos para mejorar la
+                                    productividad, coordinación y resultados dentro del entorno laboral.</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-muted"></i>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-filename="Flutter_Tu_guía_completa_de_desarrollo_para_IOS_y_Android.pdf"
+                        data-title="Flutter Tu guía completa de desarrollo para IOS y Android">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <h6 class="cert-title mb-1">Flutter Tu guía completa de desarrollo para IOS y Android
+                                </h6>
+                                <p class="cert-institution mb-1">Udemy | Fernando Herrera</p>
+                                <span class="cert-date mb-2">Julio 2021</span>
+                                <p class="cert-description small text-muted mb-0 mt-2">Desarrollo de aplicaciones
+                                    móviles nativas para iOS y Android utilizando Flutter y Dart, para crear
+                                    aplicaciones funcionales y visualmente atractivas, y desplegarlas en las tiendas
+                                    móviles correspondientes.</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-muted"></i>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-filename="Curso_de_Productividad_Personal_en_la_Era_Digital.pdf"
+                        data-title="Curso de Productividad Personal en la Era Digital">
+
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <h6 class="cert-title mb-1">Curso de Productividad Personal en la Era Digital</h6>
+                                <p class="cert-institution mb-1">Google Activate</p>
+                                <span class="cert-date mb-2">Diciembre 2015</span>
+                                <p class="cert-description small text-muted mb-0 mt-2">Gestionar el tiempo, tareas y
+                                    proyectos usando herramientas digitales.</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-muted"></i>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-filename="Google_Inteligencia_artificial_y_productividad.pdf"
+                        data-title="Google Inteligencia artificial y productividad">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <h6 class="cert-title mb-1">Google Inteligencia artificial y productividad</h6>
+                                <p class="cert-institution mb-1">Google | Santander Academy</p>
+                                <span class="cert-date mb-2">Julio 2024</span>
+                                <p class="cert-description small text-muted mb-0 mt-2">Brindar a los participantes los
+                                    conocimientos básicos sobre inteligencia artificial y el uso de herramientas
+                                    digitales, para que puedan aplicarlas de manera práctica en la automatización de
+                                    tareas, la generación de ideas y la mejora de su productividad personal y
+                                    profesional en la era digital.</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-muted"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Professional Competencies -->
+                <div class="main-section fade-in-up">
+                    <h2 class="mb-3 pb-2">Competencias Profesionales</h2>
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <div class="competency-item">
+                                <div class="competency-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-medium small">Buenas prácticas de programación</div>
+                                    <div class="text-muted" style="font-size: 9pt;">Código limpio y documentado</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="competency-item">
+                                <div class="competency-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-medium small">Trabajo colaborativo</div>
+                                    <div class="text-muted" style="font-size: 9pt;">Git, metodologías ágiles</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="competency-item">
+                                <div class="competency-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-medium small">Adaptabilidad tecnológica</div>
+                                    <div class="text-muted" style="font-size: 9pt;">Rápido aprendizaje</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="competency-item">
+                                <div class="competency-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-medium small">Investigación autónoma</div>
+                                    <div class="text-muted" style="font-size: 9pt;">Resolución independiente</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab-download" onclick="window.print()" title="Imprimir CV">
+        <i class="fas fa-download"></i>
+    </button>
+
+    <!-- Modal para visualizar PDFs -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 12px; overflow: hidden;">
+                <div class="modal-header"
+                    style="background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%); color: white;">
+                    <h5 class="modal-title" id="pdfModalLabel">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span id="modalCertTitle">Certificación</span>
+                    </h5>
+                    <!-- Botón cerrar con MDB -->
+                    <button type="button" class="btn-close btn-close-white" data-mdb-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body p-0">
+                    <div id="pdfLoader" class="text-center py-5">
+                        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                        <p class="mt-3 text-muted">Cargando certificado...</p>
+                    </div>
+
+                    <iframe id="pdfViewer" src="" width="100%" height="600" style="border: none; display: none;"
+                        title="Visor de PDF"></iframe>
+
+                    <div id="pdfError" class="text-center py-5" style="display: none;">
+                        <i class="fas fa-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                        <h5 class="mt-3">No se pudo cargar el certificado</h5>
+                        <p class="text-muted">El archivo PDF no está disponible o no se pudo cargar.</p>
+                        <button class="btn btn-primary" onclick="retryLoadPdf()" style="border-radius: 24px;">
+                            <i class="fas fa-redo me-1"></i>Intentar de nuevo
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-footer" style="background: #f8f9fa;">
+                    <button type="button" class="btn btn-outline-primary" data-mdb-dismiss="modal"
+                        style="border-radius: 24px;">
+                        <i class="fas fa-times me-1"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- MDB JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.js"></script>
+
+    <script>
+        let currentPdfUrl = '';
+        let currentCertName = '';
+
+        // Wait for DOM and all scripts to load
+        $(document).ready(function () {
+            $(document).on('click', '[data-mdb-dismiss="modal"], .modal-backdrop', function () {
+                $('#pdfModal').removeClass('show').css('display', 'none');
+                $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+            });
+
+            // Animar barras de progreso
+            setTimeout(() => {
+                $('.progress-bar-material').each(function () {
+                    const width = $(this).css('width');
+                    $(this).css('width', '0');
+                    setTimeout(() => {
+                        $(this).css('width', width);
+                    }, 100);
+                });
+            }, 500);
+
+            // Animar elementos con fade-in
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        $(entry.target).css({
+                            opacity: '1',
+                            transform: 'translateY(0)'
+                        });
+                    }
+                });
+            });
+
+            $('.fade-in-up').each(function () {
+                $(this).css({
+                    opacity: '0',
+                    transform: 'translateY(20px)',
+                    transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+                });
+                observer.observe(this);
+            });
+
+            // Ripple effect para tarjetas
+            $('.cert-card, .experience-card').on('click', function (e) {
+                const ripple = $('<span class="ripple"></span>');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.css({
+                    width: size + 'px',
+                    height: size + 'px',
+                    left: x + 'px',
+                    top: y + 'px'
+                });
+
+                $(this).append(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });
+
+            // Evento click para abrir PDFs desde atributos data
+            $('.cert-card').each(function () {
+                const $card = $(this);
+                $card.on('click', function () {
+                    const filename = $card.data('filename');
+                    const title = $card.data('title');
+                    if (filename && title) {
+                        viewCertificate(filename, title);
+                    }
+                });
+            });
+
+            // Limpiar el iframe cuando se cierre el modal
+            $('#pdfModal').on('hidden.mdb.modal', function () {
+                $('#pdfViewer').attr('src', '');
+                currentPdfUrl = '';
+                currentCertName = '';
+            });
+        });
+
+        // Función para mostrar modal con PDF
+        // Función para mostrar modal con PDF
+        function viewCertificate(filename, certTitle = 'Certificación') {
+            currentPdfUrl = `src/pdf_certs/${filename}`;
+            currentCertName = certTitle;
+
+            $('#modalCertTitle').text(certTitle);
+
+            // Try MDB first, then fallback to manual CSS manipulation
+            try {
+                if (typeof mdb !== 'undefined' && mdb.Modal) {
+                    const modal = new mdb.Modal(document.getElementById('pdfModal'));
+                    modal.show();
+                } else {
+                    throw new Error('MDB not available');
+                }
+            } catch (error) {
+                // Fallback: manually show modal with CSS classes
+                const modalElement = $('#pdfModal');
+                modalElement.addClass('show');
+                modalElement.css('display', 'block');
+                $('body').addClass('modal-open');
+
+                // Add backdrop
+                if ($('.modal-backdrop').length === 0) {
+                    $('body').append('<div class="modal-backdrop fade show"></div>');
+                }
+            }
+
+            loadPdfInModal(currentPdfUrl);
+        }
+
+        function loadPdfInModal(pdfUrl) {
+            const loader = $('#pdfLoader');
+            const viewer = $('#pdfViewer');
+            const error = $('#pdfError');
+
+            loader.show();
+            viewer.hide();
+            error.hide();
+
+            const iframe = $('#pdfViewer')[0];
+            const pdfUrlWithParams = `${pdfUrl}#toolbar=1&navpanes=0&scrollbar=1&page=1&view=FitH`;
+
+            iframe.onload = function () {
+                setTimeout(() => {
+                    loader.hide();
+                    viewer.show();
+                }, 500);
+            };
+
+            iframe.onerror = function () {
+                loader.hide();
+                error.show();
+            };
+
+            iframe.src = pdfUrlWithParams;
+        }
+
+        function retryLoadPdf() {
+            if (currentPdfUrl) {
+                loadPdfInModal(currentPdfUrl);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

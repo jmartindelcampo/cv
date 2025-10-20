@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Jesús Martín del Campo - Fullstack Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .logo-container {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(64, 224, 255, 0.1);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            /*max-width: 600px;*/
+            perspective: 1000px;
+            cursor: pointer;
+            min-width: 600px;
+            min-height: 450px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            min-height: 300px;
+        }
+
+        .logo-container:hover .card {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: inherit;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent 0deg, rgba(64, 224, 255, 0.1) 10deg, transparent 20deg);
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-logo {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .initials {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 4.5rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, #40e0ff 0%, #00d4ff 50%, #0099cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.05em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .tech-elements {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .code-brackets {
+            position: absolute;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 6rem;
+            color: #40e0ff;
+            opacity: 0.15;
+        }
+
+        .bracket-left {
+            left: -40px;
+            top: -10px;
+        }
+
+        .bracket-right {
+            right: -40px;
+            top: -10px;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: 0.02em;
+        }
+
+        .name .highlight {
+            color: #40e0ff;
+            font-weight: 400;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #40e0ff;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 20px;
+        }
+
+        .specialties {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .specialty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            font-weight: 400;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: #40e0ff;
+            opacity: 0.8;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            /*overflow: hidden;*/
+        }
+
+        .floating-code {
+            position: absolute;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #40e0ff;
+            opacity: 0.1;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .code-1 { top: 15%; left: 10%; animation-delay: 0s; }
+        .code-2 { top: 25%; right: 15%; animation-delay: 3s; }
+        .code-3 { bottom: 20%; left: 15%; animation-delay: 6s; }
+        .code-4 { bottom: 15%; right: 10%; animation-delay: 9s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+            50% { transform: translateY(-20px) rotate(2deg); opacity: 0.2; }
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 30px;
+            letter-spacing: 0.02em;
+        }
+
+        .contact-title .highlight {
+            color: #40e0ff;
+            font-weight: 400;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(64, 224, 255, 0.05);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(64, 224, 255, 0.2);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 400px;
+            text-decoration: none;
+        }
+
+        .contact-item:hover {
+            background: rgba(64, 224, 255, 0.1);
+            border-color: rgba(64, 224, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(64, 224, 255, 0.1);
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            fill: #40e0ff;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 400;
+            text-align: left;
+            flex: 1;
+        }
+
+        .contact-label {
+            color: #a0a0a0;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .back-indicator {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #40e0ff;
+            opacity: 0.6;
+            background: rgba(64, 224, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(64, 224, 255, 0.2);
+        }
+
+        .version-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #40e0ff;
+            opacity: 0.6;
+            background: rgba(64, 224, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(64, 224, 255, 0.2);
+        }
+
+        .flip-hint {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            color: #40e0ff;
+            opacity: 0.6;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .logo-container {
+                padding: 40px 30px;
+                margin: 20px;
+            }
+            
+            .initials {
+                font-size: 3.5rem;
+            }
+            
+            .name {
+                font-size: 1.8rem;
+            }
+            
+            .specialties {
+                gap: 15px;
+            }
+            
+            .bracket-left {
+                left: -20px;
+            }
+            
+            .bracket-right {
+                right: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="card">
+            <!-- FRONT SIDE -->
+            <div class="card-front">
+                <div class="version-tag">v2.0</div>
+                
+                <div class="floating-elements">
+                    <div class="floating-code code-1">&lt;/&gt;</div>
+                    <div class="floating-code code-2">{ }</div>
+                    <div class="floating-code code-3">npm run dev</div>
+                    <div class="floating-code code-4">git commit</div>
+                </div>
+
+                <div class="logo-content">
+                    <div class="main-logo">
+                        <div class="code-brackets bracket-left">{</div>
+                        <div class="initials">JMC</div>
+                        <div class="code-brackets bracket-right">}</div>
+                    </div>
+
+                    <h1 class="name">Jesús <span class="highlight">Martín del Campo</span></h1>
+                    <div class="title">Fullstack Developer</div>
+
+                    <div class="specialties">
+                        <div class="specialty">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z"/>
+                            </svg>
+                            Web Apps
+                        </div>
+                        <div class="specialty">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M17 19H7V5H17M17 1H7C5.89 1 5 1.89 5 3V21C5 22.1 5.9 23 7 23H17C18.1 23 19 22.1 19 21V3C19 1.89 18.1 1 17 1Z"/>
+                            </svg>
+                            Mobile
+                        </div>
+                        <div class="specialty">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M4 6H20V16H4M20 18C21.11 18 22 17.11 22 16V6C22 4.89 21.11 4 20 4H4C2.89 4 2 4.89 2 6V16C2 17.11 2.89 18 4 18H0V20H24V18H20Z"/>
+                            </svg>
+                            Systems
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-hint">Hover to contact →</div>
+            </div>
+
+            <!-- BACK SIDE -->
+            <div class="card-back">
+                <div class="back-indicator">Contact</div>
+                
+                <div class="floating-elements">
+                    <div class="floating-code code-1">console.log('hello');</div>
+                    <div class="floating-code code-2">const dev = 'JMC';</div>
+                    <div class="floating-code code-3">return contact;</div>
+                    <div class="floating-code code-4">// Let's connect</div>
+                </div>
+
+                <div class="contact-info">
+                    <h2 class="contact-title">Let's <span class="highlight">Connect</span></h2>
+                    
+                    <a href="mailto:jesus@example.com" class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                        </svg>
+                        <div class="contact-text">
+                            <span class="contact-label">Email</span>
+                            mcvjf.maz@gmail.com
+                        </div>
+                    </a>
+
+                    <a href="tel:+523312345678" class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                        </svg>
+                        <div class="contact-text">
+                            <span class="contact-label">Phone</span>
+                            33 12 76 12 49
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/jesus-martindelcampo" target="_blank" class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                        </svg>
+                        <div class="contact-text">
+                            <span class="contact-label">LinkedIn</span>
+                            /jesus-martindelcampo
+                        </div>
+                    </a>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5Z"/>
+                        </svg>
+                        <div class="contact-text">
+                            <span class="contact-label">Location</span>
+                            Tlaquepaque, Jalisco, MX
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
